@@ -1,0 +1,78 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold;
+  }
+  h2 {
+    @apply text-2xl font-bold;
+  }
+  h3 {
+    @apply text-xl font-bold;
+  }
+  h4 {
+    @apply text-lg font-bold;
+  }
+}
+
+@layer components {
+  .form-field {
+    @apply grid gap-2 w-full;
+  }
+  .form-field label {
+    @apply text-sm font-medium place-self-start;
+  }
+  .form-field input[type="text"],
+  .form-field input[type="number"],
+  .form-field textarea {
+    @apply w-full border border-gray-400 rounded py-2 px-4 outline-none;
+  }
+  .form-field textarea {
+    @apply resize-none;
+  }
+  .form-field input[type="text"]:focus,
+  .form-field input[type="number"]:focus,
+  .form-field textarea:focus {
+    @apply ring-2 ring-blue-500;
+  }
+
+  .form-field input[type="text"].error {
+    @apply border-red-500 bg-red-50;
+  }
+
+  .form-field input[type="text"].disabled {
+    @apply bg-gray-200 text-gray-400 cursor-not-allowed;
+  }
+
+  .form-field .select-wrapper,
+  .form-field .input-wrapper {
+    @apply relative;
+  }
+  /* Input */
+
+  /* Select */
+  .form-field .select-wrapper select {
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    @apply border border-gray-400 rounded py-2 px-4 w-full outline-none;
+  }
+
+  .form-field .select-wrapper select:focus {
+    @apply ring-2 ring-blue-500;
+  }
+
+  .form-field .select-wrapper select.error {
+    @apply border-red-500 bg-red-50;
+  }
+
+  .form-field .select-wrapper .icon,
+  .form-field .input-wrapper .icon {
+    transform: translateY(-50%);
+    @apply absolute top-1/2 right-2 flex;
+  }
+}
